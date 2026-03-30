@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="NextyWeb Admin - Manage Blogs">
+  <title>Manage Blogs | NextyWeb Admin</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Quill Editor -->
+  <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../public/css/main.css">
+  <link rel="stylesheet" href="../public/css/admin.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../public/images/logo.svg">
+</head>
+<body>
+  <div class="admin-layout">
+    <!-- Sidebar -->
+    <aside class="admin-sidebar">
+      <div class="sidebar-header">
+        <img src="../public/images/logo.svg" alt="NextyWeb Logo">
+      </div>
+      <nav class="sidebar-nav">
+        <a href="dashboard.html">
+          <svg viewBox="0 0 24 24"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/></svg>
+          Dashboard
+        </a>
+        <a href="manage-blogs.html" class="active">
+          <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+          Manage Blogs
+        </a>
+        <a href="manage-reviews.html">
+          <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          Manage Reviews
+        </a>
+        <a href="manage-services.html">
+          <svg viewBox="0 0 24 24"><path d="M20 6h-8l-2-2H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-5 3c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm4 8h-8v-1c0-1.33 2.67-2 4-2s4 .67 4 2v1z"/></svg>
+          Manage Services
+        </a>
+        <a href="manage-portfolio.html">
+          <svg viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
+          Manage Portfolio
+        </a>
+      </nav>
+      <div class="sidebar-footer">
+        <button class="logout-btn">
+          <svg viewBox="0 0 24 24"><path d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z"/></svg>
+          Logout
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="admin-main">
+      <header class="admin-header">
+        <button class="mobile-menu-toggle">
+          <svg viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+        </button>
+        <h1>Manage Blogs</h1>
+        <div class="admin-user">
+          <img src="https://placehold.co/40x40/1B3A6B/FFFFFF?text=A" alt="Admin" class="admin-user-avatar">
+          <div>
+            <span class="admin-user-name">Admin</span>
+            <span class="admin-user-email">admin@nextyweb.com</span>
+          </div>
+        </div>
+      </header>
+
+      <div class="admin-content">
+        <!-- Add Blog Form -->
+        <div class="admin-form">
+          <h3>Add New Blog Post</h3>
+          <form id="blog-form">
+            <div class="form-group">
+              <label for="blog-title">Title *</label>
+              <input type="text" id="blog-title" name="title" required placeholder="Enter blog title">
+            </div>
+            <div class="form-group">
+              <label for="blog-excerpt">Excerpt</label>
+              <textarea id="blog-excerpt" name="excerpt" placeholder="Short description for blog preview"></textarea>
+            </div>
+            <div class="editor-container">
+              <label>Content *</label>
+              <div id="editor-container"></div>
+            </div>
+            <div class="form-group">
+              <label for="blog-thumbnail">Thumbnail Image</label>
+              <input type="file" id="blog-thumbnail" name="thumbnail" accept="image/*">
+            </div>
+            <div class="form-group">
+              <label class="toggle-switch">
+                <input type="checkbox" id="blog-published" name="published" checked>
+                <span class="toggle-slider"></span>
+              </label>
+              <span style="margin-left: 12px;">Published</span>
+            </div>
+            <button type="submit" class="btn btn-primary">Publish Blog Post</button>
+          </form>
+        </div>
+
+        <!-- Blogs List -->
+        <div class="data-table">
+          <div class="data-table-header">
+            <h3>All Blog Posts</h3>
+          </div>
+          <div id="blogs-list">
+            <!-- Blogs loaded dynamically -->
+            <div class="loading-container">
+              <div class="spinner"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-storage-compat.js"></script>
+  
+  <!-- Quill Editor -->
+  <script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>
+  
+  <!-- Custom Scripts -->
+  <script src="../public/js/firebase-config.js"></script>
+  <script src="../public/js/auth.js"></script>
+  <script src="../public/js/admin.js"></script>
+</body>
+</html>

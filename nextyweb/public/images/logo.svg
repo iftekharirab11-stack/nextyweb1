@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" width="200" height="60">
+  <defs>
+    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#1B3A6B;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1DB09A;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="200" height="60" fill="none"/>
+  <text x="10" y="45" font-family="Arial, sans-serif" font-size="40" font-weight="bold" fill="#1B3A6B">N</text>
+  <text x="45" y="45" font-family="Arial, sans-serif" font-size="40" font-weight="bold" fill="#1DB09A">W</text>
+  <text x="90" y="35" font-family="Arial, sans-serif" font-size="14" fill="#1B3A6B">NextyWeb</text>
+  <text x="90" y="50" font-family="Arial, sans-serif" font-size="10" fill="#666">Web Design Agency</text>
+</svg>

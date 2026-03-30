@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="NextyWeb Admin Login">
+  <title>Admin Login | NextyWeb</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../public/css/main.css">
+  <link rel="stylesheet" href="../public/css/admin.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../public/images/logo.svg">
+</head>
+<body>
+  <div class="admin-login">
+    <div class="login-card">
+      <img src="../public/images/logo.svg" alt="NextyWeb Logo">
+      <h2>Admin Login</h2>
+      <p>Sign in to access the admin dashboard</p>
+      
+      <div id="login-error" class="login-error"></div>
+      
+      <form id="login-form" class="login-form">
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" required placeholder="admin@nextyweb.com">
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required placeholder="Enter your password">
+        </div>
+        <button type="submit" class="btn btn-primary">Sign In</button>
+      </form>
+      
+      <p style="margin-top: 24px; font-size: 0.875rem; color: #888;">
+        <a href="../index.html" style="color: var(--accent);">← Back to Website</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+  
+  <!-- Custom Scripts -->
+  <script src="../public/js/firebase-config.js"></script>
+  <script src="../public/js/auth.js"></script>
+</body>
+</html>
