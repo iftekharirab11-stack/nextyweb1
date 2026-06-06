@@ -268,8 +268,8 @@ This project is for NextyWeb. All rights reserved.
 ## 🆘 Support
 
 For issues or questions, please contact:
-- Email: hello@nextyweb.com
-- Phone: +1 (555) 123-4567
+- Email: iftekharirab11@gmail.com
+- Phone: +8801619804451
 
 ---
 
